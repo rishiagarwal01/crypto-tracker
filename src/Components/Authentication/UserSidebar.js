@@ -91,7 +91,7 @@ export default function UserSidebar() {
                         src={user.photoURL}
                         alt={user.displayName || user.email}
                     />
-                    {/* <span className="userDetails">
+                    <span className="userDetails">
                      {user.displayName || user.email}
                     </span>
                 </div>
@@ -119,32 +119,7 @@ export default function UserSidebar() {
                       )
                     }
                   })}
-                </div> */}
-                {/* </span> */}
-                <div className={classes.watchlist}>
-                  <span style={{ fontSize: 15, textShadow: "0 0 5px black" }}>
-                    Watchlist
-                  </span>
-                  {coins.map((coin) => {
-                    if (watchlist.includes(coin.id))
-                      return (
-                        <div className={classes.coin}>
-                          <span>{coin.name}</span>
-                          <span style={{ display: "flex", gap: 8 }}>
-                            {symbol}{" "}
-                            {numberWithCommas(coin.current_price.toFixed(2))}
-                            <AiFillDelete
-                              style={{ cursor: "pointer" }}
-                              fontSize="16"
-                              onClick={() => removeFromWatchlist(coin)}
-                            />
-                          </span>
-                        </div>
-                      );
-                    else return <></>;
-                  })}
                 </div>
-              </div>
 
                 <Button
                     variant='contained'
